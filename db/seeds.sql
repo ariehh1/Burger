@@ -2,5 +2,5 @@ INSERT INTO burgers(burger_name)
 VALUES ("McDouble"),
 ("Dicks Deluxe"),
 ("Big Mac"),
-("Whiskey River BBQ Burger")
+("Whiskey River BBQ Burger"),
 ("Buffalo Burger");
