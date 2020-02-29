@@ -1,19 +1,16 @@
 "use strict";
 
 $(function() {
-  $(".change-burger").on("click", function(event) {
-    const id = $(this).data("id");
-    const newBurger = $(this).data("newsleep");
+  $(".devour-it").on("click", function(event) {
+    console.log("devour-it clicked");
 
-    const newBurgerState = {
-      burger: newBurger
-    };
+    const burger_id = $(this).val();
+    console.log("burger_id" + burger_id);
 
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: newBurgerState
-    }).then(function() {
-      console.log("changed sleep to", newBurger);
+    $.ajax({
+      method: "PUT",
+      url: "/burgers/" + burger_id
+    }).then(function(data) {
       location.reload();
     });
   });
