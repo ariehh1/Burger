@@ -1,24 +1,55 @@
 <div class="container">
+
+    <div class="row" id="header-pic">
+        <img src="/assets/img/burger.png" alt="burger" />
+    </div>
+    <div class="row" id="header">
+        <h1 id="eatdaburger">Eat-Da-Burger!</h1>
+    </div>
+
     <div class="row">
-        <div class="col-xs-12 text-center" id="top-bar">
-            <img src="/assets/img/burger.png" alt="burger" />
-            <h1> Eat-Da-Burger! </h1>
-        </div>
+        <div class="col-xs-6" id="undevoured-div">
 
+            <div class="undevoured">
 
+                {{#each burgers}} {{#unless this.devoured}}
+                <ul>
+                    {{burger_name}}
+                    <button type="submit" class="btn btn-outline-danger btn-sm devour-it" value="{{id}}"
+                        data-newdevour="{{devoured}}">Devour it</button>
+                </ul>
+                {{/unless}} {{/each}}
 
-
-
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center enter_section">
-                    <form action="/burgers/create" method="POST">
-                        <input type="text" class="form-control" name="burger_name" value="" id="enter_text">
-                        <button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
-                    </form>
-                    <p>Enter a burger you want to eat and Click the "Submit" button.</p>
-                </div>
             </div>
         </div>
+        <div class="col-xs-6" id="devoured-div">
+            <div class="devoured">
+                <ul id="devoured-burgers">
+                    {{#each burgers}} {{#if this.devoured}}
+                    <input id="devoured-burgers" class="form-control" type="text"
+                        placeholder="{{this.id}} . {{this.burger_name}}" readonly> {{/if}} {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="burger-text">
+        <div class="burger-form">
+            <form action="/api/burgers" method="POST">
+                <textarea name="burger-name" id="burger-input" name="burger" placeholder="Burger of choice"></textarea>
+            </form>
+        </div>
+    </div>
+    <div class="row" id="burger-submit">
+        <button type="submit" id="submit-button" class="btn btn-outline-success">Submit</button>
+
+    </div>
+</div>
+
+<div class="row">
+    <p id="instructions">Enter a burger you would like to eat, click submit, then enjoy!</p>
+
+</div>
+
+
+</div>

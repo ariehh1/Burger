@@ -1,63 +1,87 @@
 body {
-  width: 99%;
-  height: 900px;
   background-color: #ffcc66;
-}
-#top-bar {
-  margin-top: 35px;
-}
-.spacing-reset {
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-.list-reset {
-  padding: 0;
-  border: 0;
-  margin: 0;
-  list-style-type: none;
-}
-.text-center {
-  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 990px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 990px;
-  }
+img {
+  width: 200px;
+  height: 200px;
 }
 
-.enter_section {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-#enter_text {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: auto;
-  width: 400px;
-  height: 80px;
-  font-size: 38px;
-}
-.task {
-  border-style: solid;
-  border-color: black;
-  border-width: 3px;
-}
-.button-size {
-  padding-bottom: 20px;
-}
-#text-enter-button {
-  margin-top: 10px;
-  margin-bottom: 18px;
+ul {
+  padding: 3px;
+  margin: 3px;
 }
 
-h1 {
-  color: #ff3300;
+#devoured-burgers {
+  padding: 3px;
+  margin: 3px;
+}
+
+.container {
+  align-content: center;
+  width: 100%;
+  max-width: 970px;
+}
+
+.row {
+  justify-content: center;
+}
+
+#header {
+  align-content: center;
+  padding-bottom: 25px;
+  font-family: "Luckiest Guy", cursive;
+}
+
+#header-pic {
+  align-content: center;
+}
+
+#burger-submit {
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#undevoured-div {
+  display: inline-block;
+  width: 100%;
+  max-width: 485px;
+}
+
+#devoured-div {
+  display: inline-block;
+  width: 100%;
+  max-width: 485px;
+}
+
+.undevoured {
+  width: 100%;
+  font-size: 18px;
+}
+
+.devour-it {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#burger-input {
+  display: inline-block;
+  width: 520px;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  padding: 10px;
+}
+
+#instructions {
+  padding: 10px;
+  font-size: 14px;
+}
+
+#burger-handlebar {
+  font-size: 18px;
+}
+
+#devoured-burgers {
+  font-size: 18px;
 }

@@ -37,7 +37,7 @@ function objToSql(ob) {
 // Object for all MySQL statements
 
 var orm = {
-  all: function(tableInput, cb) {
+  selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
