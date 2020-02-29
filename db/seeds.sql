@@ -1,5 +1,5 @@
-INSERT INTO burgers(burger_name, devoured)
-VALUES ("McDouble", false),
-("Dicks Deluxe", false),
-("Big Mac", false),
-("Whiskey River BBQ Burger", false);
+INSERT INTO burgers(burger_name)
+VALUES ("McDouble"),
+("Dicks Deluxe"),
+("Big Mac"),
+("Whiskey River BBQ Burger");

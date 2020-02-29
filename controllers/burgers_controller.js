@@ -8,9 +8,9 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 router.get("/", (req, res) => {
   burger.all(function(data) {
-    // const hbsObject = { different object name here ***
-    //   burger: data
-    // };
+    const hbsObject = {
+      burger: data
+    };
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
