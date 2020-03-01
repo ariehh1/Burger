@@ -28,7 +28,7 @@ $(function() {
 
     console.log("newBurger = " + JSON.stringify(newBurger));
 
-    $.ajax("/api/burgers", {
+    $.ajax("/burgers", {
       type: "POST",
       data: newBurger
     }).then(function() {
