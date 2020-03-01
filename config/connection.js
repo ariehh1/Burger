@@ -1,6 +1,6 @@
 "use strict";
 
-const mysql = require("mysql");
+var mysql = require("mysql");
 var connection;
 
 if (process.env.JAWSDB_URL) {
@@ -15,7 +15,7 @@ if (process.env.JAWSDB_URL) {
   });
 }
 
-connection.connect(err => {
+connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;

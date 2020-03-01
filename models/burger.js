@@ -2,9 +2,9 @@
 
 const orm = require("../config/orm.js");
 
-const burgers = {
-  selectAll: function(cb) {
-    orm.selectAll("burgers", function(res) {
+var burger = {
+  all: function(cb) {
+    orm.all("burgers", function(res) {
       cb(res);
     });
   },
@@ -14,7 +14,7 @@ const burgers = {
     });
   },
   update: function(id, cb) {
-    const condition = "id= " + id;
+    var condition = "id= " + id;
     orm.update(
       "burgers",
       {
@@ -26,4 +26,4 @@ const burgers = {
   }
 };
 
-module.exports = burgers;
+module.exports = burger;

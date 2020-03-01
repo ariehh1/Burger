@@ -1,14 +1,16 @@
 "use strict";
 
-const express = require("express");
+var express = require("express");
 
-const router = express.Router();
+var router = express.Router();
 
-const burger = require("../models/burger.js");
-router.get("/", (req, res) => {
-  burger.selectAll(function(data) {
-    const hbsObject = {
-      burger: data
+// Require burger model
+var burger = require("../models/burger.js");
+
+router.get("/", function(req, res) {
+  burger.all(function(data) {
+    var hbsObject = {
+      burgers: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -20,6 +22,7 @@ router.post("/burgers", function(req, res) {
     ["burger_name", "devoured"],
     [req.body.burger_name, req.body.devoured],
     function(result) {
+      // res.json(result);
       res.redirect("/");
     }
   );

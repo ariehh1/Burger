@@ -1,11 +1,10 @@
-"use strict";
-
-$(function() {
-  $(".devour-it").on("click", function(event) {
+$(function devourIt() {
+  // button click to set devoured status
+  $(".devour-it").on("click", function() {
     console.log("devour-it clicked");
 
-    const burger_id = $(this).val();
-    console.log("burger_id" + burger_id);
+    var burger_id = $(this).val();
+    console.log("burger_id = " + burger_id);
 
     $.ajax({
       method: "PUT",
@@ -15,11 +14,12 @@ $(function() {
     });
   });
 
+  // button click to capture new burger data
   $("#submit-button").on("click", function(event) {
     event.preventDefault();
-    console.log("submit-button clicked");
+    console.log("submit-button clicked!");
 
-    const newBurger = {
+    var newBurger = {
       burger_name: $("#burger-input")
         .val()
         .trim(),
@@ -28,11 +28,14 @@ $(function() {
 
     console.log("newBurger = " + JSON.stringify(newBurger));
 
+    // // Send the POST request
+
     $.ajax("/burgers", {
       type: "POST",
       data: newBurger
     }).then(function() {
-      console.log("created new burger");
+      console.log("created new burger!");
+
       location.reload();
     });
   });
