@@ -7,34 +7,27 @@ function printQuestionMarks(num) {
 
   for (var i = 0; i < num; i++) {
     arr.push("?");
+    console.log("printQuestionMarks arr = " + arr);
   }
   return arr.toString();
-  console.log("printQuestionMarks arr = " + arr);
 }
 
-// Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
   var arr = [];
 
-  // loop through the keys and push the keys and values as a string into 'arr'
   for (var key in ob) {
     var value = ob[key];
-    // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
       //if string w spaces, add quotations (lana del ray => 'lana del ray')
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
+
       arr.push(key + "=" + value);
     }
-    //translate the array of strings to a single comma-seperated string
     return arr.toString();
   }
 }
-
-// Object for all MySQL statements
 
 var orm = {
   selectAll: function(tableInput, cb) {
