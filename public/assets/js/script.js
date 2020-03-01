@@ -1,3 +1,5 @@
+"use strict";
+
 $(function devourIt() {
   // button click to set devoured status
   $(".devour-it").on("click", function() {
@@ -7,8 +9,8 @@ $(function devourIt() {
     console.log("burger_id = " + burger_id);
 
     $.ajax({
-      method: "PUT",
-      url: "/burgers/" + burger_id
+      type: "PUT",
+      url: "/api/burgers/" + burger_id
     }).then(function(data) {
       location.reload();
     });
@@ -30,7 +32,7 @@ $(function devourIt() {
 
     // // Send the POST request
 
-    $.ajax("/burgers", {
+    $.ajax("/api/burgers/", {
       type: "POST",
       data: newBurger
     }).then(function() {
