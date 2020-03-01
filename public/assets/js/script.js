@@ -1,43 +1,58 @@
 "use strict";
 
-$(function devourIt() {
-  // button click to set devoured status
-  $(".devour-it").on("click", function() {
-    console.log("devour-it clicked");
+$(function() {
+  $(".change-devour").on("click", function(event) {
+    var id = $(this).data("id");
 
-    var burger_id = $(this).val();
-    console.log("burger_id = " + burger_id);
+    var newState = {
+      devoured: true
+    };
 
-    $.ajax({
+    // Send the PUT request.
+    $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      url: "/api/burgers/" + burger_id
-    }).then(function(data) {
+      data: newState
+    }).then(function() {
+      // console.log("changed devour to", true);
+      // Reload the page to get the updated list
       location.reload();
     });
   });
 
-  // button click to capture new burger data
-  $("#submit-button").on("click", function(event) {
+  $(".create-form").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    console.log("submit-button clicked!");
 
-    var newBurger = {
-      burger_name: $("#burger-input")
-        .val()
-        .trim(),
-      devoured: false
-    };
+    var name = $("[name=burger-name]")
+      .val()
+      .trim();
 
-    console.log("newBurger = " + JSON.stringify(newBurger));
+    if (name !== "") {
+      var newBurger = {
+        name: name
+      };
 
-    // // Send the POST request
+      // Send the POST request.
+      $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
+      }).then(function() {
+        // console.log("created new burger");
+        // Reload the page to get the updated list
+        location.reload();
+      });
+    } else {
+      $("[name=burger-name]").val("");
+    }
+  });
 
-    $.ajax("/api/burgers/", {
-      type: "POST",
-      data: newBurger
+  $(".delete-sleep").on("click", function(event) {
+    var id = $(this).data("id");
+
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE"
     }).then(function() {
-      console.log("created new burger!");
-
+      // Reload the page to get the updated list
       location.reload();
     });
   });
