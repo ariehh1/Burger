@@ -15,17 +15,18 @@ $(function() {
     });
   });
 
-  $(".create-form").on("submit", function(event) {
+  $("#submit-button").on("click", function(event) {
     event.preventDefault();
+    console.log("submit-button clicked");
 
     const newBurger = {
-      name: $("#bu")
+      burger_name: $("#burger-input")
         .val()
         .trim(),
-      devour: $("[name=devour]:checked")
-        .val()
-        .trim()
+      devoured: false
     };
+
+    console.log("newBurger = " + JSON.stringify(newBurger));
 
     $.ajax("/api/burgers", {
       type: "POST",
