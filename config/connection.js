@@ -15,14 +15,15 @@ if (process.env.JAWSDB_URL) {
   });
 }
 
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log(
-    "connected with id" + connection.threadId + " " + "on localhost:3000"
-  );
-});
+connection.connect();
+// function(err) {
+//   if (err) {
+//     console.error("error connecting: " + err.stack);
+//     return;
+//   }
+//   console.log(
+//     "connected with id" + connection.threadId + " " + "on localhost:3000"
+//   );
+// });
 
 module.exports = connection;
