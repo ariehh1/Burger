@@ -1,4 +1,4 @@
-# Burger
+# [Burger](https://glacial-atoll-54265.herokuapp.com/)
 
 In this repository, I have created a Burger application that takes in a user order and logs it to the left side of the page. On the right side of the page, are the burgers already devoured. To move a burger to the right side of the page, a user must click on the "Devour it!" button. Devoured or not, the application logs every burger order in the database.
 
