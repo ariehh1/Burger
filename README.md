@@ -14,32 +14,30 @@ MySQL, Node, Express, Handlebars, HTML, CSS, JavaScript, Heroku
 <h1>Directory Structure:</h1>
 .
 ├── config
-│   ├── connection.js
-│   └── orm.js
-│ 
+│   └── config.json
+│ 
 ├── controllers
-│   └── burgers_controller.js
-│
-├── db
-│   ├── schema.sql
-│   └── seeds.sql
+│   └── burgers_controller.js
 │
 ├── models
-│   └── burger.js
-│ 
+│   ├── index.js
+│   └── burger.js
+│ 
 ├── node_modules
-│ 
+│ 
 ├── package.json
 │
 ├── public
-│   └── assets
-│       ├── css
-│       │   └── burger_style.css
-│       ├──js
-│       │   └── script.js
-│       └── img
-│           └── burger.png
-│  
+│   ├── assets
+│   │   ├── css
+│   │   │   └── burger_style.css
+│   │   ├── img
+│   │   │   └── ...
+│   │   └── js
+│   │       └── burgers.js
+│   └── test.html
+│
+├── schema.sql
 │
 ├── server.js
 │
