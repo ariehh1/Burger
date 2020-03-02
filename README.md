@@ -12,39 +12,7 @@ This repository connects all of the new technologies and concepts we have learne
 MySQL, Node, Express, Handlebars, HTML, CSS, JavaScript, Heroku
 
 <h1>Directory Structure:</h1>
-.
-├── config
-│   └── config.json
-│ 
-├── controllers
-│   └── burgers_controller.js
-│
-├── models
-│   ├── index.js
-│   └── burger.js
-│ 
-├── node_modules
-│ 
-├── package.json
-│
-├── public
-│   ├── assets
-│   │   ├── css
-│   │   │   └── burger_style.css
-│   │   ├── img
-│   │   │   └── ...
-│   │   └── js
-│   │       └── burgers.js
-│   └── test.html
-│
-├── schema.sql
-│
-├── server.js
-│
-└── views
-    ├── index.handlebars
-    └── layouts
-        └── main.handlebars
+![image](https://user-images.githubusercontent.com/57271161/75637847-b58c6b00-5bdd-11ea-89f4-0b63896024b6.png)
 
 <h1>Future Development:</h1>
 If I were to continue building out this application, I would add in a layer of "deleting" a burger, prompting a user to enter a different burger if already chosen, and connecting into an API for nutritional information. A burger over a certain caloric count would alert the user within the application.
