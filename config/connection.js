@@ -20,7 +20,9 @@ connection.connect(function(err) {
     console.error("error connecting: " + err.stack);
     return;
   }
-  console.log("connected with id" + connection.threadId);
+  console.log(
+    "connected with id" + connection.threadId + " " + "on localhost:3000"
+  );
 });
 
 module.exports = connection;
